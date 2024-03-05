@@ -25,3 +25,17 @@ select * from cervezas;
 update cervezas set nombre = "Costera",precio_compra = 25000,precio_negocio = 30000, precio_sixpack = 15000, precio_cliente = 18000 where id = 1;
 drop table cervezas;
 delete from cervezas where id = 1;
+
+
+#################################################################Facturacion###############################################################3
+
+create database if not exists facturacion;
+use facturacion;
+
+create table if not exists venta(
+id integer auto_increment,
+nombre varchar(40),
+cantidad int,
+precio double,
+primary key(id)
+);
