@@ -1,33 +1,460 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="estilos.css">
-</head>
-<body>
-    <h1>Facturas</h1>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Menú Desplegable con Búsqueda</title>
+  </head>
+
+  <body>
+    <img src="logo.png" alt="" width="200px">
+    <h2>Selecciona un producto:</h2>
+
     <form action="">
-            <div class="productos">
-                <label for="producto">Producto: </label>
-                <input type="text" name="producto" class="entrada" id="producto">
-            </div>
-            <div class="precios">
-                <label for="precio">Precio: </label>
-                <input type="number" name="precio" id="precio">
-            </div>
-            <div class="cantidad">
-                <label for="cantidad">Cantidad: </label>
-                <input type="number" name="cantidad" id="cantidad">
-            </div>
-            <div class="boton">
-                <button type="submit" name="agregar">Agregar</button>
-                <button type="submit" name="total">Total</button>
-            </div>
-            <div class="total">
-                
-            </div>
+
+        <input type="text" id="busqueda" placeholder="Buscar producto" />
+
+        <select id="negoCliente">
+        <option value="" disabled selected>
+            Seleccionar si es Negocio o Cliente
+        </option>
+        <option value="negocio">Negocio</option>
+        <option value="cliente">Cliente</option>
+        </select>
+
+        <select id="productos">
+        <optgroup label="Cervezas">
+            <option value="" disabled selected>Seleccionar producto</option>
+            <option value="CANASTA AGUILA">CANASTA AGUILA</option>
+            <option value="CANASTA POKER">CANASTA POKER</option>
+            <option value="CANASTA AGUILA LIGHT">CANASTA AGUILA LIGHT</option>
+            <option value="CANASTA CLUB DORADA-ROJA-NEGRA">
+            CANASTA CLUB DORADA-ROJA-NEGRA
+            </option>
+            <option value="CANASTA COSTEÑA BACANA">CANASTA COSTEÑA BACANA</option>
+            <option value="CANASTA COSTEÑA GRIS">CANASTA COSTEÑA GRIS</option>
+            <option value="CANASTA ANDINA">CANASTA ANDINA</option>
+            <option value="CLUB DORADA LATA">CLUB DORADA LATA</option>
+            <option value="CLUB ROJA LATA">CLUB ROJA LATA</option>
+            <option value="CLUB NEGRA LATA">CLUB NEGRA LATA</option>
+            <option value="COSTEÑA GRIS LATA">COSTEÑA GRIS LATA</option>
+            <option value="COSTEÑA BACANA LATA">COSTEÑA BACANA LATA</option>
+            <option value="HEINEKEN LATA">HEINEKEN LATA</option>
+            <option value="HEINEKEN BOTELLA X 24">HEINEKEN BOTELLA X 24</option>
+            <option value="AGUILA LATA">AGUILA LATA</option>
+            <option value="POKER LATA">POKER LATA</option>
+            <option value="BUDWEISER LATA">BUDWEISER LATA</option>
+            <option value="CORONITA">CORONITA</option>
+            <option value="CORONA">CORONA</option>
+            <option value="BUDWEISER BOTELLA">BUDWEISER BOTELLA</option>
+            <option value="COLA Y POLA">COLA Y POLA</option>
+            <option value="AGUILA LIGTH X 24 LATA">AGUILA LIGTH X 24 LATA</option>
+            <option value="TECATE LATA">TECATE LATA</option>
+            <option value="ANDINA DORADA">ANDINA DORADA</option>
+            <option value="ANDINA DORADA LATÓN X12">ANDINA DORADA LATÓN X12</option>
+            <option value="REDD'S">REDD'S</option>
+            <option value="3 CORDILLERAS">3 CORDILLERAS</option>
+            <option value="STELLA">STELLA</option>
+
+            <option value="SIXPACK CLUB DORADA LATA">
+            SIXPACK CLUB DORADA LATA
+            </option>
+            <option value="SIXPACK CLUB ROJA LATA">SIXPACK CLUB ROJA LATA</option>
+            <option value="SIXPACK CLUB NEGRA LATA">SIXPACK CLUB NEGRA LATA</option>
+            <option value="SIXPACK COSTEÑA GRIS LATA">
+            SIXPACK COSTEÑA GRIS LATA
+            </option>
+            <option value="SIXPACK COSTEÑA BACANA LATA">
+            SIXPACK COSTEÑA BACANA LATA
+            </option>
+            <option value="SIXPACK HEINEKEN LATA">SIXPACK HEINEKEN LATA</option>
+            <option value="SIXPACK AGUILA LATA">SIXPACK AGUILA LATA</option>
+            <option value="SIXPACK POKER LATA">SIXPACK POKER LATA</option>
+            <option value="SIXPACK BUDWEISER LATA">SIXPACK BUDWEISER LATA</option>
+            <option value="SIXPACK CORONITA">SIXPACK CORONITA</option>
+            <option value="SIXPACK CORONA">SIXPACK CORONA</option>
+            <option value="SIXPACK BUDWEISER BOTELLA">
+            SIXPACK BUDWEISER BOTELLA
+            </option>
+            <option value="SIXPACK COLA Y POLA">SIXPACK COLA Y POLA</option>
+            <option value="SIXPACK AGUILA LIGTH LATA">
+            SIXPACK AGUILA LIGTH LATA
+            </option>
+            <option value="SIXPACK TECATE LATA">SIXPACK TECATE LATA</option>
+            <option value="SIXPACK ANDINA DORADA">SIXPACK ANDINA DORADA</option>
+            <option value="SIXPACK ANDINA DORADA LATON">
+            SIXPACK ANDINA DORADA LATON
+            </option>
+            <option value="SIXPACK REDD'S">SIXPACK REDD'S</option>
+            <option value="SIXPACK 3 CORDILLERAS">SIXPACK 3 CORDILLERAS</option>
+            <option value="SIXPACK STELLA">SIXPACK STELLA</option>
+
+            <option value="UNIDAD CLUB DORADA LATA">UNIDAD CLUB DORADA LATA</option>
+            <option value="UNIDAD CLUB ROJA LATA">UNIDAD CLUB ROJA LATA</option>
+            <option value="UNIDAD CLUB NEGRA LATA">UNIDAD CLUB NEGRA LATA</option>
+            <option value="UNIDAD COSTEÑA GRIS LATA">
+            UNIDAD COSTEÑA GRIS LATA
+            </option>
+            <option value="UNIDAD COSTEÑA BACANA LATA">
+            UNIDAD COSTEÑA BACANA LATA
+            </option>
+            <option value="UNIDAD HEINEKEN LATA">UNIDAD HEINEKEN LATA</option>
+            <option value="UNIDAD HEINEKEN BOTELLA">UNIDAD HEINEKEN BOTELLA</option>
+            <option value="UNIDAD AGUILA LATA">UNIDAD AGUILA LATA</option>
+            <option value="UNIDAD POKER LATA">UNIDAD POKER LATA</option>
+            <option value="UNIDAD BUDWEISER LATA">UNIDAD BUDWEISER LATA</option>
+            <option value="UNIDAD CORONITA">UNIDAD CORONITA</option>
+            <option value="UNIDAD CORONA">UNIDAD CORONA</option>
+            <option value="UNIDAD BUDWEISER BOTELLA">
+            UNIDAD BUDWEISER BOTELLA
+            </option>
+            <option value="UNIDAD COLA Y POLA">UNIDAD COLA Y POLA</option>
+            <option value="UNIDAD AGUILA LIGTH LATA">
+            UNIDAD AGUILA LIGTH LATA
+            </option>
+            <option value="UNIDAD TECATE LATA">UNIDAD TECATE LATA</option>
+            <option value="UNIDAD ANDINA DORADA">UNIDAD ANDINA DORADA</option>
+            <option value="UNIDAD ANDINA DORADA LATON">
+            UNIDAD ANDINA DORADA LATON
+            </option>
+            <option value="UNIDAD REDD'S">UNIDAD REDD'S</option>
+            <option value="UNIDAD AZTECA">UNIDAD AZTECA</option>
+            <option value="UNIDAD STELLA">UNIDAD STELLA</option>
+        </optgroup>
+
+        <optgroup label="Cigarrillos">
+            <option value="ROTHMANS AZUL">ROTHMANS AZUL</option>
+            <option value="ROTHMANS BCO">ROTHMANS BCO</option>
+            <option value="LUCKY">LUCKY</option>
+            <option value="LUCKY ALASKA">LUCKY ALASKA</option>
+            <option value="LUCKY NUEVO">LUCKY NUEVO</option>
+            <option value="MALBORO ROJO">MALBORO ROJO</option>
+            <option value="MALBORO ICE">MALBORO ICE</option>
+            <option value="MALBORO FUSION">MALBORO FUSION</option>
+            <option value="L & M">L & M</option>
+            <option value="MEDIO ROTHMANS AZUL">MEDIO ROTHMANS AZUL</option>
+            <option value="MEDIO ROTHMANS BCO">MEDIO ROTHMANS BCO</option>
+            <option value="MEDIO LUCKY">MEDIO LUCKY</option>
+            <option value="MEDIO LUCKY ALASKA">MEDIO LUCKY ALASKA</option>
+            <option value="MEDIO LUCKY NUEVO">MEDIO LUCKY NUEVO</option>
+            <option value="MEDIO MALBORO ROJO">MEDIO MALBORO ROJO</option>
+            <option value="MEDIO MALBORO ICE">MEDIO MALBORO ICE</option>
+            <option value="MEDIO MALBORO FUSION">MEDIO MALBORO FUSION</option>
+            <option value="MEDIO L & M">MEDIO L & M</option>
+            <option value="UNIDAD ROTHMANS AZUL">UNIDAD ROTHMANS AZUL</option>
+            <option value="UNIDAD ROTHMANS BCO">UNIDAD ROTHMANS BCO</option>
+            <option value="UNIDAD LUCKY">UNIDAD LUCKY</option>
+            <option value="UNIDAD LUCKY ALASKA">UNIDAD LUCKY ALASKA</option>
+            <option value="UNIDAD LUCKY NUEVO">UNIDAD LUCKY NUEVO</option>
+            <option value="UNIDAD MALBORO ROJO">UNIDAD MALBORO ROJO</option>
+            <option value="UNIDAD MALBORO ICE">UNIDAD MALBORO ICE</option>
+            <option value="UNIDAD MALBORO FUSION">UNIDAD MALBORO FUSION</option>
+            <option value="UNIDAD L & M">UNIDAD L & M</option>
+        </optgroup>
+
+        <optgroup label="Tequila">
+            <option value="BOTELLA JOSE CUERVO">BOTELLA JOSE CUERVO</option>
+            <option value="BOTELLA JOSE CUERVO SILVER">
+            BOTELLA JOSE CUERVO SILVER
+            </option>
+            <option value="BOT. OLMECA REPOSADO">BOT. OLMECA REPOSADO</option>
+            <option value="BOT. OLMECA BLANCO">BOT. OLMECA BLANCO</option>
+            <option value="BOT. OLMECA CHOCO">BOT. OLMECA CHOCO</option>
+            <option value="BOT. JIMADOR SILVER">BOT. JIMADOR SILVER</option>
+            <option value="BOT. JIMADOR REPOSADO">BOT. JIMADOR REPOSADO</option>
+        </optgroup>
+
+        <optgroup label="Whisky">
+            <option value="JHONNY WALKER SELLO ROJO BT.">
+            JHONNY WALKER SELLO ROJO BT.
+            </option>
+            <option value="JHONNY WALKER SELLO 1/4">JHONNY WALKER SELLO 1/4</option>
+            <option value="BUCHANANS BT.">BUCHANANS BT.</option>
+            <option value="BUCHANANS BT MASTER">BUCHANANS BT MASTER</option>
+            <option value="BUCHANANS 1/2">BUCHANANS 1/2</option>
+            <option value="OLD PARR BT.">OLD PARR BT.</option>
+            <option value="GRANTS LITRO">GRANTS LITRO</option>
+            <option value="GRANTS BT">GRANTS BT</option>
+            <option value="GRANTS 1/2">GRANTS 1/2</option>
+            <option value="GRANTS 1/4">GRANTS 1/4</option>
+            <option value="JACK DANIELS HONEY">JACK DANIELS HONEY</option>
+            <option value="JACK DANIELS FIRE">JACK DANIELS FIRE</option>
+            <option value="JACK DANIELS BT.">JACK DANIELS BT.</option>
+            <option value="CHIVAS REGAL LT.">CHIVAS REGAL LT.</option>
+            <option value="CHIVAS REGAL BT.">CHIVAS REGAL BT.</option>
+            <option value="CHIVAS EXTRA BT.">CHIVAS EXTRA BT.</option>
+            <option value="CHIVAS + VASOS BT">CHIVAS + VASOS BT</option>
+            <option value="CHIVAS + TERMO BT">CHIVAS + TERMO BT</option>
+            <option value="SOMETHING + CARTAS">SOMETHING + CARTAS</option>
+            <option value="SOMETHING LITRO">SOMETHING LITRO</option>
+            <option value="SOMETHING BOTELLA">SOMETHING BOTELLA</option>
+            <option value="SOMETHING ½">SOMETHING ½</option>
+            <option value="SOMETHING ¼">SOMETHING ¼</option>
+            <option value="PASSPORT BOTELLA">PASSPORT BOTELLA</option>
+            <option value="PASSPORT ½">PASSPORT ½</option>
+            <option value="PASSPORT ¼">PASSPORT ¼</option>
+            <option value="BLACK WHITE BOTELLA">BLACK WHITE BOTELLA</option>
+            <option value="BLACK WHITHE ½">BLACK WHITHE ½</option>
+            <option value="CREMA DE WHISKY BAILYS BT.">
+            CREMA DE WHISKY BAILYS BT.
+            </option>
+            <option value="CREMA DE WHISKY BAILYS 1/2">
+            CREMA DE WHISKY BAILYS 1/2
+            </option>
+            <option value="BRANDY DOMEC 1/2">BRANDY DOMEC 1/2</option>
+            <option value="CREMA DE RON">CREMA DE RON</option>
+            <option value="SELLO NEGRO BT">SELLO NEGRO BT</option>
+        </optgroup>
+
+        <optgroup label="Vinos">
+            <option value="FRONTERA">FRONTERA</option>
+            <option value="LEYENDA">LEYENDA</option>
+            <option value="GATO NEGRO CABERTNET">GATO NEGRO CABERTNET</option>
+            <option value="GATO NEGRO MERLOT">GATO NEGRO MERLOT</option>
+            <option value="DUBONNET">DUBONNET</option>
+            <option value="EMBAJADOR">EMBAJADOR</option>
+            <option value="VINO ABOCADO">VINO ABOCADO</option>
+            <option value="CRUZARES">CRUZARES</option>
+            <option value="SANZON">SANZON</option>
+            <option value="MANISCHEWITZ">MANISCHEWITZ</option>
+            <option value="MOSCATEL DE PASAS">MOSCATEL DE PASAS</option>
+            <option value="CASA DEL RIHN">CASA DEL RIHN</option>
+            <option value="VINO CARIÑOSO">VINO CARIÑOSO</option>
+            <option value="VINO CANAN">VINO CANAN</option>
+        </optgroup>
+
+        <optgroup label="Ron">
+            <option value="SANTA FE ¼">SANTA FE ¼</option>
+            <option value="SANTA FE ½">SANTA FE ½</option>
+            <option value="SANTA FE LITRO CAJA">SANTA FE LITRO CAJA</option>
+            <option value="SANTA FE BOT">SANTA FE BOT</option>
+            <option value="CALDAS 5 AÑOS 1/2">CALDAS 5 AÑOS 1/2</option>
+            <option value="CALDAS 5 AÑOS BOT">CALDAS 5 AÑOS BOT</option>
+            <option value="CALDAS 8 AÑOS 1/2">CALDAS 8 AÑOS 1/2</option>
+            <option value="CALDAS 8 AÑOS BOT">CALDAS 8 AÑOS BOT</option>
+            <option value="CALDAS 15 AÑOS GRAN RESERVA BT">
+            CALDAS 15 AÑOS GRAN RESERVA BT
+            </option>
+            <option value="CALDAS ¼">CALDAS ¼</option>
+            <option value="CALDAS ½">CALDAS ½</option>
+            <option value="RON CALDAS LITRO CAJA">RON CALDAS LITRO CAJA</option>
+            <option value="CALDAS BOT">CALDAS BOT</option>
+            <option value="GARRAFA CALDAS">GARRAFA CALDAS</option>
+            <option value="CALDAS ROBLE BLANCO">CALDAS ROBLE BLANCO</option>
+            <option value="MEDELLIN ¼">MEDELLIN ¼</option>
+            <option value="MEDELLIN ½">MEDELLIN ½</option>
+            <option value="MEDELLIN AÑEJO  BOTELLA">MEDELLIN AÑEJO BOTELLA</option>
+            <option value="BACARDI LIMON BOTELLA">BACARDI LIMON BOTELLA</option>
+            <option value="BACARDI MOJITO BOTELLA">BACARDI MOJITO BOTELLA</option>
+            <option value="BACARDI BAHAMA">BACARDI BAHAMA</option>
+            <option value="BACARDI HURRICANE">BACARDI HURRICANE</option>
+            <option value="BACARDI ZOMBIE AZUL">BACARDI ZOMBIE AZUL</option>
+            <option value="BACARDI MANDARINA">BACARDI MANDARINA</option>
+            <option value="ESTUCHE RON MEDELLIN DORADO 750CC">
+            ESTUCHE RON MEDELLIN DORADO 750CC
+            </option>
+            <option value="ESTUCHE RON MEDELLIN 3 AÑOS 750CC">
+            ESTUCHE RON MEDELLIN 3 AÑOS 750CC
+            </option>
+            <option value="COCTEL DE RON CALDAS">COCTEL DE RON CALDAS</option>
+            <option value="BOTELLA RON MEDELLIN DORADO">
+            BOTELLA RON MEDELLIN DORADO
+            </option>
+        </optgroup>
+
+        <optgroup label="Aguardiente">
+            <option value="NECTAR VERDE ¼">NECTAR VERDE ¼</option>
+            <option value="NECTAR VERDE ½">NECTAR VERDE ½</option>
+            <option value="NECTAR VERDE BOTELLA">NECTAR VERDE BOTELLA</option>
+            <option value="NECTAR VERDE LITRO">NECTAR VERDE LITRO</option>
+            <option value="NECTAR VERDE LITRO 1/2">NECTAR VERDE LITRO 1/2</option>
+            <option value="NECTAR VERDE 500CC">NECTAR VERDE 500CC</option>
+            <option value="GARRAFA NECTAR VERDE">GARRAFA NECTAR VERDE</option>
+            <option value="NECTAR ROJO ¼">NECTAR ROJO ¼</option>
+            <option value="NECTAR ROJO ½">NECTAR ROJO ½</option>
+            <option value="NECTAR LITRO ROJO">NECTAR LITRO ROJO</option>
+            <option value="BOTELLA NECTAR ROJO">BOTELLA NECTAR ROJO</option>
+            <option value="NECTAR AZUL SUGAR FREE 1/2">
+            NECTAR AZUL SUGAR FREE 1/2
+            </option>
+            <option value="ANTIOQUEÑO ROJO ¼">ANTIOQUEÑO ROJO ¼</option>
+            <option value="ANTIOQUEÑO ROJO ½">ANTIOQUEÑO ROJO ½</option>
+            <option value="ANTIOQUEÑO ROJO BOT.">ANTIOQUEÑO ROJO BOT.</option>
+            <option value="ANTIOQUEÑO AZUL ¼">ANTIOQUEÑO AZUL ¼</option>
+            <option value="ANTIOQUEÑO AZUL ½">ANTIOQUEÑO AZUL ½</option>
+            <option value="ANTIOQUEÑO AZUL BOT.">ANTIOQUEÑO AZUL BOT.</option>
+            <option value="ANTIOQUEÑO AZUL LITRO">ANTIOQUEÑO AZUL LITRO</option>
+            <option value="ANTIOQUEÑO VERDE ¼">ANTIOQUEÑO VERDE ¼</option>
+            <option value="ANTIOQUEÑO VERDE ½">ANTIOQUEÑO VERDE ½</option>
+            <option value="ANTIOQUEÑO VERDE BOT.">ANTIOQUEÑO VERDE BOT.</option>
+            <option value="ANTIOQUEÑO VERDE LITRO">ANTIOQUEÑO VERDE LITRO</option>
+            <option value="CRISTAL VERDE ½">CRISTAL VERDE ½</option>
+            <option value="CRISTAL VERDE BOTELLA">CRISTAL VERDE BOTELLA</option>
+            <option value="CRISTAL VERDE LITRO">CRISTAL VERDE LITRO</option>
+            <option value="AMARILLO BOTELLA">AMARILLO BOTELLA</option>
+            <option value="CHORRITO 500ml">CHORRITO 500ml</option>
+            <option value="CHORRITO LITRO">CHORRITO LITRO</option>
+            <option value="AMARILLO BOTELLA">AMARILLO BOTELLA</option>
+            <option value="CRISTAL XS 1/2">CRISTAL XS 1/2</option>
+            <option value="CRISTAL XS VERDE BOTELLA">
+            CRISTAL XS VERDE BOTELLA
+            </option>
+            <option value="CRISTAL VERDE XS LITRO">CRISTAL VERDE XS LITRO</option>
+        </optgroup>
+
+        <optgroup label="Vodka">
+            <option value="SMIRNOFF BOTELLA">SMIRNOFF BOTELLA</option>
+            <option value="SMIRNOFF 1/2">SMIRNOFF 1/2</option>
+            <option value="SMIRNOFF CERVEZA">SMIRNOFF CERVEZA</option>
+            <option value="ABSOLUTE">ABSOLUTE</option>
+        </optgroup>
+
+        <optgroup label="Varios">
+            <option value="FOUR LOCO">FOUR LOCO</option>
+            <option value="LIKE">LIKE</option>
+            <option value="RED BULL">RED BULL</option>
+            <option value="MONSTER">MONSTER</option>
+            <option value="MIKE">MIKE</option>
+            <option value="COCA- COLA MINI 250 X 12">
+            COCA- COLA MINI 250 X 12
+            </option>
+            <option value="COCA- COLA FLEXI 400 X 12">
+            COCA- COLA FLEXI 400 X 12
+            </option>
+            <option value="COCA-COLA 1.5 X 12">COCA-COLA 1.5 X 12</option>
+            <option value="COCA-COLA 3LT X 6">COCA-COLA 3LT X 6</option>
+            <option value="POSTOBON 1.5 X 12">POSTOBON 1.5 X 12</option>
+            <option value="POSTOBON MINI 250 X 12">POSTOBON MINI 250 X 12</option>
+            <option value="POSTOBON 2.5 X8">POSTOBON 2.5 X8</option>
+            <option value="POSTOBON 3LT X6">POSTOBON 3LT X6</option>
+            <option value="BIG COLA 1,6 X8">BIG COLA 1,6 X8</option>
+            <option value="GATORADE X 12">GATORADE X 12</option>
+            <option value="SPEDD BOTELLA X 12">SPEDD BOTELLA X 12</option>
+            <option value="SPEDD LATA X 24">SPEDD LATA X 24</option>
+            <option value="SPEDD LITRO">SPEDD LITRO</option>
+            <option value="PONY MINI X 30">PONY MINI X 30</option>
+            <option value="PONY MEDIANA X 24">PONY MEDIANA X 24</option>
+            <option value="SAVILOE GRANDE X 6">SAVILOE GRANDE X 6</option>
+            <option value="VIVE 100 PEQUEÑO X 6">VIVE 100 PEQUEÑO X 6</option>
+            <option value="VIVE 100 GRANDE X 6">VIVE 100 GRANDE X 6</option>
+            <option value="PONY MALTA 1.5">PONY MALTA 1.5</option>
+            <option value="COLA Y POLA 1.5">COLA Y POLA 1.5</option>
+            <option value="JUGO DEL VALLE 1.5">JUGO DEL VALLE 1.5</option>
+            <option value="QUATRO 1.5">QUATRO 1.5</option>
+            <option value="QUATRO 400ML">QUATRO 400ML</option>
+            <option value="SPRITE 1.5">SPRITE 1.5</option>
+            <option value="H2O 1.5">H2O 1.5</option>
+            <option value="PEPSI 1.5">PEPSI 1.5</option>
+            <option value="SODA">SODA</option>
+            <option value="AGUA BRISA SABORIZADA PERSONAL">
+            AGUA BRISA SABORIZADA PERSONAL
+            </option>
+            <option value="AGUA BRISA SABORIZADA 1.5">
+            AGUA BRISA SABORIZADA 1.5
+            </option>
+            <option value="CIFRUT PERSONAL X12">CIFRUT PERSONAL X12</option>
+            <option value="CIFRUT 1.6 X8">CIFRUT 1.6 X8</option>
+            <option value="JUGO HIT PERSONAL  BOTELLA X12">
+            JUGO HIT PERSONAL BOTELLA X12
+            </option>
+            <option value="JUGO HIT GRANDE CAJA">JUGO HIT GRANDE CAJA</option>
+            <option value="JUGO HIT CAJA PEQUEÑA X24">
+            JUGO HIT CAJA PEQUEÑA X24
+            </option>
+            <option value="BIG COLA PEQUEÑA X12">BIG COLA PEQUEÑA X12</option>
+            <option value="HATSU">HATSU</option>
+            <option value="AMPER">AMPER</option>
+            <option value="PIÑA COLADA">PIÑA COLADA</option>
+
+            <option value="UNIDAD COCA-COLA MINI 250">
+            UNIDAD COCA-COLA MINI 250
+            </option>
+            <option value="UNIDAD COCA-COLA FLEXI 400">
+            UNIDAD COCA-COLA FLEXI 400
+            </option>
+            <option value="UNIDAD COCA-COLA 1.5">UNIDAD COCA-COLA 1.5</option>
+            <option value="UNIDAD COCA-COLA 3LT">UNIDAD COCA-COLA 3LT</option>
+            <option value="UNIDAD POSTOBON 1.5">UNIDAD POSTOBON 1.5</option>
+            <option value="UNIDAD POSTOBON MINI 250">
+            UNIDAD POSTOBON MINI 250
+            </option>
+            <option value="UNIDAD POSTOBON 2.5">UNIDAD POSTOBON 2.5</option>
+            <option value="UNIDAD POSTOBON 3LT">UNIDAD POSTOBON 3LT</option>
+            <option value="UNIDAD BIG COLA 1,6">UNIDAD BIG COLA 1,6</option>
+            <option value="UNIDAD GATORADE">UNIDAD GATORADE</option>
+            <option value="UNIDAD SPEDD BOTELLA">UNIDAD SPEDD BOTELLA</option>
+            <option value="UNIDAD SPEDD LATA">UNIDAD SPEDD LATA</option>
+            <option value="UNIDAD SPEDD LITRO">UNIDAD SPEDD LITRO</option>
+            <option value="UNIDAD PONY MINI">UNIDAD PONY MINI</option>
+            <option value="UNIDAD PONY MEDIANA">UNIDAD PONY MEDIANA</option>
+            <option value="UNIDAD SAVILOE GRANDE">UNIDAD SAVILOE GRANDE</option>
+            <option value="UNIDAD VIVE 100 PEQUEÑO">UNIDAD VIVE 100 PEQUEÑO</option>
+            <option value="UNIDAD VIVE 100 GRANDE">UNIDAD VIVE 100 GRANDE</option>
+            <option value="UNIDAD PONY MALTA 1.5">UNIDAD PONY MALTA 1.5</option>
+            <option value="UNIDAD COLA Y POLA 1.5">UNIDAD COLA Y POLA 1.5</option>
+            <option value="UNIDAD JUGO DEL VALLE 1.5">
+            UNIDAD JUGO DEL VALLE 1.5
+            </option>
+            <option value="UNIDAD QUATRO 1.5">UNIDAD QUATRO 1.5</option>
+            <option value="UNIDAD QUATRO 400ML">UNIDAD QUATRO 400ML</option>
+            <option value="UNIDAD SPRITE 1.5">UNIDAD SPRITE 1.5</option>
+            <option value="UNIDAD H2O 1.5">UNIDAD H2O 1.5</option>
+            <option value="UNIDAD PEPSI 1.5">UNIDAD PEPSI 1.5</option>
+            <option value="UNIDAD SODA">UNIDAD SODA</option>
+            <option value="UNIDAD AGUA BRISA SABORIZADA PERSONAL">
+            UNIDAD AGUA BRISA SABORIZADA PERSONAL
+            </option>
+            <option value="UNIDAD AGUA BRISA SABORIZADA 1.5">
+            UNIDAD AGUA BRISA SABORIZADA 1.5
+            </option>
+            <option value="UNIDAD CIFRUT PERSONAL">UNIDAD CIFRUT PERSONAL</option>
+            <option value="UNIDAD CIFRUT 1.6">UNIDAD CIFRUT 1.6</option>
+            <option value="UNIDAD JUGO HIT PERSONAL  BOTELLA">
+            UNIDAD JUGO HIT PERSONAL BOTELLA
+            </option>
+            <option value="UNIDAD JUGO HIT GRANDE CAJA">
+            UNIDAD JUGO HIT GRANDE CAJA
+            </option>
+            <option value="UNIDAD JUGO HIT CAJA PEQUEÑA">
+            UNIDAD JUGO HIT CAJA PEQUEÑA
+            </option>
+            <option value="UNIDAD BIG COLA PEQUEÑA">UNIDAD BIG COLA PEQUEÑA</option>
+            <option value="UNIDAD HATSU">UNIDAD HATSU</option>
+            <option value="UNIDAD AMPER">UNIDAD AMPER</option>
+        </optgroup>
+
+        <optgroup label="Aguas">
+            <option value="CRISTAL MINI X 24">CRISTAL MINI X 24</option>
+            <option value="CRISTAL 600ML X 24">CRISTAL 600ML X 24</option>
+            <option value="CRISTAL LITRO X 12">CRISTAL LITRO X 12</option>
+            <option value="CIELO 600ML X 24">CIELO 600ML X 24</option>
+            <option value="CIELO CHUPO X 12">CIELO CHUPO X 12</option>
+            <option value="CIELO GAS X 15">CIELO GAS X 15</option>
+            <option value="UNIDAD CRISTAL MINI">UNIDAD CRISTAL MINI</option>
+            <option value="UNIDAD CRISTAL 600ML">UNIDAD CRISTAL 600ML</option>
+            <option value="UNIDAD CRISTAL LITRO">UNIDAD CRISTAL LITRO</option>
+            <option value="UNIDAD CIELO 600ML">UNIDAD CIELO 600ML</option>
+            <option value="UNIDAD CIELO CHUPO">UNIDAD CIELO CHUPO</option>
+            <option value="UNIDAD CIELO GAS">UNIDAD CIELO GAS</option>
+        </optgroup>
+        </select>
+
+        <div id="canti">
+            <label for="">Cantidad:</label>
+            <input type="number" id="cantidad">
+        </div>
+
+        <button type="button" onclick="agregarItem()">Agregar</button>
+        <button type="button" onclick="eliminarItem()">Eliminar Anterior</button>
+
     </form>
-</body>
+
+    
+
+    <h2>Factura</h2>
+    <ul id="facturaList"></ul>
+    <button type="button" onclick="guardarFactura()">Guardar Factura</button>
+
+    <script src="main.js"></script>
+  </body>
 </html>
