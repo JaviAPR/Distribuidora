@@ -143,7 +143,7 @@ const preciosProductosNegocio = {
     "CREMA DE WHISKY BAILYS 1/2": 38000,
     "BRANDY DOMEC 1/2": 26000,
     "CREMA DE RON": 51000,
-    "SELLO NEGRO BT": 127000,
+    "SELLO NEGRO BT": 128000,
 
     //VINOS
     "FRONTERA": 27850,
